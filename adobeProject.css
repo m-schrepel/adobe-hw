@@ -1,0 +1,12 @@
+/* CSS declarations go here */
+img{
+  width:100%;
+}
+iframe{
+  width:100%;
+  height:auto;
+}
+table, tr, td{
+  width:100%;
+  height:auto;
+}
