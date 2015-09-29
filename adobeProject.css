@@ -36,7 +36,7 @@ a:hover{
   white-space: normal;
 
 }
-section{
+article{
   box-shadow: 6px 4px 8px 0px #bbbbcd;
   overflow-y:auto;
   height:90vh;
@@ -52,13 +52,17 @@ h3{
   text-align: center;
   margin: 20px 0;
 }
-section ::-webkit-scrollbar-thumb{
-  color:brown;
-  background-color: brown;
-  width:2px;
+time{
+  display:block;
+  margin:10px 0;
 }
-@media(max-width:476px){
-  section{
+.authorship-link{
+  display:block;
+  margin: 10px 0;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 560px) {
+  article{
     overflow-y:visible;
     height:auto;
     padding:10px 20px;

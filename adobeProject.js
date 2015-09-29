@@ -19,6 +19,7 @@ if (Meteor.isClient) {
         JSON.parse(res.content.slice(15, res.content.length -2)).posts.forEach(function(post){Posts.insert(post)})
       } else{
         // FIXME do something with error state
+
       }
     })
 
@@ -42,6 +43,9 @@ if (Meteor.isClient) {
        }else{
          return false
        }
+    },
+    pretty:function(date){
+      return moment(date).from(moment())
     }
   });
 

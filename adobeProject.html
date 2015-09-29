@@ -1,5 +1,6 @@
 <head>
   <title>adobeProject</title>
+  <meta name="viewport" content="width=device-width">
 </head>
 
 <body>
@@ -11,10 +12,13 @@
     {{#each post}}
       <div class="uk-width-large-1-4 uk-width-medium-1-2 uk-width-small-1-1 card">
         {{#if publish}}
-          <section class="uk-animation-fade">
+          <article class="uk-animation-fade">
             <h3>{{{title}}}</h3>
+            <time>{{pretty date}}</time>
+            <a href={{author.profile_URL}} rel="author" class="authorship-link">{{author.first_name}} {{author.last_name}}</a>
+
             {{{content}}}
-          </section>
+          </article>
         {{/if}}
       </div>
     {{/each}}
