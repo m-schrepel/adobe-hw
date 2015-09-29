@@ -11,7 +11,7 @@ if (Meteor.isClient) {
     // when the template is created, before it is rendered, we make the ajax call
     HTTP.get('https://public-api.wordpress.com/rest/v1/sites/idcdistro.wordpress.com/posts/?callback=ajpRspthis',{
     }, function(err, res){
-      if(res.statusCode === 200){
+      if(!err && res && res.statusCode === 200){
         // This is invalid JSON when it comes back. It needs help.
         // It feels dirty to hard code this in such a brittle way
 
@@ -19,7 +19,10 @@ if (Meteor.isClient) {
         JSON.parse(res.content.slice(15, res.content.length -2)).posts.forEach(function(post){Posts.insert(post)})
       } else{
         // FIXME do something with error state
-
+        // What I'd like to do is attempt to render a cached / created HTML file
+        // if user has connected, but lost connection or cache the JSON file and
+        // load things that way. Instead, this ugly thing
+        $('.uk-alert').removeClass('uk-hidden')
       }
     })
 

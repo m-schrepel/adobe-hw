@@ -55,12 +55,20 @@ h3{
 time{
   display:block;
   margin:10px 0;
+  color: #d0d0de;
 }
 .authorship-link{
   display:block;
   margin: 10px 0;
 }
-
+.uk-alert{
+  height:40px;
+  width:100%;
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+  transition:.5s;
+}
 @media only screen and (min-device-width : 320px) and (max-device-width : 560px) {
   article{
     overflow-y:visible;

@@ -9,6 +9,10 @@
 
 <template name="allPosts">
   <div class="uk-grid">
+    <div class="uk-alert uk-alert-danger uk-hidden" data-uk-alert>
+      <a href="" class="uk-alert-close uk-close"></a>
+      <p>There is an error loading the data this page relies upon. Try <a href="http://adobe.meteor.com">reloading</a> or send an email to <a href="mailto:mschrepel@gmail.com?Subject=adobe.meteor.com%20is%20not%20working" target="_blank">Matthew</a></p>
+    </div>
     {{#each post}}
       <div class="uk-width-large-1-4 uk-width-medium-1-2 uk-width-small-1-1 card">
         {{#if publish}}
@@ -16,7 +20,6 @@
             <h3>{{{title}}}</h3>
             <time>{{pretty date}}</time>
             <a href={{author.profile_URL}} rel="author" class="authorship-link">{{author.first_name}} {{author.last_name}}</a>
-
             {{{content}}}
           </article>
         {{/if}}
