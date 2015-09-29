@@ -9,10 +9,12 @@
 <template name="allPosts">
   <div class="uk-grid">
     {{#each post}}
-      <div class="uk-width-large-1-4 uk-width-medium-1-2 uk-width-small-1-1">
+      <div class="uk-width-large-1-4 uk-width-medium-1-2 uk-width-small-1-1 card">
         {{#if publish}}
-          <h3>{{{title}}}</h3>
-          <section>{{{content}}}</section>
+          <section class="uk-animation-fade">
+            <h3>{{{title}}}</h3>
+            {{{content}}}
+          </section>
         {{/if}}
       </div>
     {{/each}}

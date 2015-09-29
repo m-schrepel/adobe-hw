@@ -21,6 +21,15 @@ if (Meteor.isClient) {
         // FIXME do something with error state
       }
     })
+
+    // there is no body scroll event so I have to do this instead
+    $(window).on('scroll', function(e) {
+      var element = document.body
+      if($(window).scrollTop() + $(window).height() > $(document).height() - 150) {
+           var limit = Session.get('limit')
+           Session.set('limit', limit += 5)
+      }
+    })
   })
 
   Template.allPosts.helpers({
@@ -37,13 +46,16 @@ if (Meteor.isClient) {
   });
 
   Template.allPosts.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
+    'click img': function (e) {
+      e.preventDefault();
+      var src = $(e.currentTarget).attr('src').split('?')[0];
+      var lightbox = UIkit.lightbox.create([
+        {'source': src, 'type':'image'}
+      ]);
+      lightbox.show();
     }
   });
 }
-
 
 
 

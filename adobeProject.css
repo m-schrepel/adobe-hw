@@ -1,4 +1,18 @@
 /* CSS declarations go here */
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300italic,900);
+body{
+  font-family: 'Lato', sans-serif;
+  background-color: #d0d0de;
+  color: #453055;
+  padding-bottom:30px;
+}
+em{
+  color: #453055;
+}
+.uk-grid{
+  padding: 0 25px;
+  overflow:auto;
+}
 img{
   width:100%;
 }
@@ -8,5 +22,45 @@ iframe{
 }
 table, tr, td{
   width:100%;
+  display:block;
   height:auto;
+}
+a{
+  word-break: break-all;
+  color:darkslateblue;
+  transition:.25s;
+}
+a:hover{
+  color:slateblue;
+  text-decoration: none;
+  white-space: normal;
+
+}
+section{
+  box-shadow: 6px 4px 8px 0px #bbbbcd;
+  overflow-y:auto;
+  height:90vh;
+  background-color: ghostwhite;
+  padding:0 20px;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+h3{
+  text-transform: uppercase;
+  color: #453055;
+  font-weight: 900;
+  text-align: center;
+  margin: 20px 0;
+}
+section ::-webkit-scrollbar-thumb{
+  color:brown;
+  background-color: brown;
+  width:2px;
+}
+@media(max-width:476px){
+  section{
+    overflow-y:visible;
+    height:auto;
+    padding:10px 20px;
+  }
 }
